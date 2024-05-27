@@ -29,7 +29,7 @@ Classify Attendance App does not require any installation. Simply access it thro
 
 ## Support
 
-If you have any questions or encounter any issues while using Classify Attendance App, please feel free to contact us at [your email address].
+If you have any questions or encounter any issues while using Classify Attendance App, please feel free to contact us at gauravkatara53@gmail.com.
 
 ## License
 
