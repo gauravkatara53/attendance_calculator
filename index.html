@@ -3,48 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Classify</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        .highlight {
-            background-color: yellow;
-        }
-    </style>
+    <title>Attendance Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body class="bg-gray-900 flex justify-center items-center min-h-screen">
+<body class="bg-black text-white flex items-center justify-center min-h-screen">
 
-    <div class="w-full h-full flex items-center justify-center">
-        <div class="bg-gray-800 p-8 rounded shadow-md w-full max-w-md mx-4">
-            <h1 class="text-2xl font-bold mb-4 text-center text-white">Attendance Calculator</h1>
-            
-            <form id="attendanceForm" class="space-y-4">
+    <div class="w-full max-w-md mx-auto p-4">
+        <div class="bg-black p-8 rounded shadow-md w-full">
+            <h1 class="text-4xl font-semibold text-center mb-2">Attendance Calculator</h1>
+            <p class="text-center text-gray-400 mb-8">Enter Total Classes, Attended Classes, and Desired Percentage</p>
+            <form id="attendanceForm" class="space-y-6">
                 <div>
-                    <label for="totalClasses" class="block text-lg font-medium text-gray-400">Total Classes:</label>
-                    <input type="number" id="totalClasses"
-                        class="form-input mt-1 block w-full bg-gray-700 text-gray-200 rounded-md border-none p-2 text-lg"
-                        placeholder="Enter total classes" required>
+                    <label for="totalClasses" class="block text-lg font-bold mb-2">Total Classes:</label>
+                    <input type="number" id="totalClasses" 
+                           class="shadow appearance-none border border-gray-700 rounded w-full py-3 px-4 leading-tight focus:outline-none focus:shadow-outline bg-black text-white text-lg" 
+                           placeholder="Enter total classes" required>
                 </div>
                 <div>
-                    <label for="attendedClasses" class="block text-lg font-medium text-gray-400">Attended Classes:</label>
-                    <input type="number" id="attendedClasses"
-                        class="form-input mt-1 block w-full bg-gray-700 text-gray-200 rounded-md border-none p-2 text-lg"
-                        placeholder="Enter attended classes" required>
+                    <label for="attendedClasses" class="block text-lg font-bold mb-2">Attended Classes:</label>
+                    <input type="number" id="attendedClasses" 
+                           class="shadow appearance-none border border-gray-700 rounded w-full py-3 px-4 leading-tight focus:outline-none focus:shadow-outline bg-black text-white text-lg" 
+                           placeholder="Enter attended classes" required>
                 </div>
                 <div>
-                    <label for="desiredAttendance" class="block text-lg font-medium text-gray-400">Desired Attendance (%):</label>
-                    <input type="number" id="desiredAttendance"
-                        class="form-input mt-1 block w-full bg-gray-700 text-gray-200 rounded-md border-none p-2 text-lg"
-                        value="75" placeholder="Enter desired attendance %" required>
+                    <label for="desiredAttendance" class="block text-lg font-bold mb-2">Desired Attendance (%):</label>
+                    <input type="number" id="desiredAttendance" 
+                           class="shadow appearance-none border border-gray-700 rounded w-full py-3 px-4 leading-tight focus:outline-none focus:shadow-outline bg-black text-white text-lg" 
+                           value="75" placeholder="Enter desired attendance %" required>
                 </div>
-                <button type="submit"
-                    class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded w-full text-lg">Calculate</button>
+                <button type="submit" 
+                        class="bg-blue-600 hover:bg-blue-800 text-white font-bold py-3 px-4 rounded focus:outline-none focus:shadow-outline w-full text-lg">Calculate</button>
             </form>
-            <div id="result" class="mt-4 text-white text-lg"></div>
+            <div id="result" class="mt-6 text-lg"></div>
         </div>
     </div>
 
     <script src="script.js">
-        
+       
     </script>
 </body>
 </html>
