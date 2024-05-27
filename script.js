@@ -57,6 +57,9 @@ document.getElementById('attendanceForm').addEventListener('submit', function(ev
     localStorage.setItem('attendanceData', JSON.stringify(attendanceData));
 
     resultDiv.innerHTML = resultMessage;
+
+    // Scroll to the result section
+    resultDiv.scrollIntoView({ behavior: 'smooth' });
 });
 
 // Load stored attendance data on page load
@@ -77,42 +80,3 @@ window.addEventListener('load', function() {
         resultDiv.innerHTML = resultMessage;
     }
 });
-
-
-
-document.getElementById('menu-toggle').addEventListener('click', function() {
-    document.getElementById('navbar-search').classList.toggle('hidden');
-});
-document.getElementById('search-toggle').addEventListener('click', function() {
-    document.getElementById('mobile-search-input').classList.toggle('hidden');
-});
-
-function highlightText(searchText, content) {
-    if (!searchText) {
-        return content;
-    }
-    const regex = new RegExp(`(${searchText})`, 'gi');
-    return content.replace(regex, '<span class="highlight">$1</span>');
-}
-
-function searchHandler(inputId) {
-    const searchInput = document.getElementById(inputId);
-    const searchContent = document.querySelectorAll('.search-content');
-
-    searchInput.addEventListener('input', () => {
-        const query = searchInput.value.trim().toLowerCase();
-        searchContent.forEach((element) => {
-            const text = element.textContent.toLowerCase();
-            if (text.includes(query)) {
-                element.innerHTML = highlightText(query, element.textContent);
-                element.style.display = '';
-            } else {
-                element.innerHTML = element.textContent;
-                element.style.display = 'none';
-            }
-        });
-    });
-}
-
-searchHandler('search-input');
-searchHandler('mobile-search-input');
