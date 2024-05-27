@@ -11,89 +11,39 @@
         }
     </style>
 </head>
-<body class="bg-gray-500">
-    
+<body class="bg-gray-500 flex justify-center items-center min-h-screen">
 
-    
-       
-        <!-- Add more content as needed for testing -->
-        <div class=" text-white search-content">
-
-
-
-            <div class="flex justify-center items-center h-screen">
-                <div class="bg-gray-800 p-8 rounded shadow-md w-96">
-                    <h1 class="text-2xl font-bold mb-4 text-center">Attendance Calculator</h1>
-                    <form id="attendanceForm" class="space-y-4">
-                        <div>
-                            <label for="totalClasses" class="block text-sm font-medium text-gray-400">Total Classes:</label>
-                            <input type="number" id="totalClasses"
-                                class="form-input mt-1 block w-full bg-gray-700 text-gray-200 rounded-md border-none"
-                                placeholder="Enter total classes" required>
-                        </div>
-                        <div>
-                            <label for="attendedClasses" class="block text-sm font-medium text-gray-400">Attended
-                                Classes:</label>
-                            <input type="number" id="attendedClasses"
-                                class="form-input mt-1 block w-full bg-gray-700 text-gray-200 rounded-md border-none"
-                                placeholder="Enter attended classes" required>
-                        </div>
-                        <div>
-                            <label for="desiredAttendance" class="block text-sm font-medium text-gray-400">Desired
-                                Attendance (%):</label>
-                            <input type="number" id="desiredAttendance"
-                                class="form-input mt-1 block w-full bg-gray-700 text-gray-200 rounded-md border-none"
-                                value="75" placeholder="Enter desired attendance %" required>
-                        </div>
-                        <button type="submit"
-                            class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded w-full">Calculate</button>
-                    </form>
-                    <div id="result" class="mt-4"></div>
+    <div class="w-full h-full flex items-center justify-center">
+        <div class="bg-gray-800 p-8 rounded shadow-md w-full max-w-md mx-4">
+            <h1 class="text-2xl font-bold mb-4 text-center text-white">Attendance Calculator</h1>
+            <form id="attendanceForm" class="space-y-4">
+                <div>
+                    <label for="totalClasses" class="block text-lg font-medium text-gray-400">Total Classes:</label>
+                    <input type="number" id="totalClasses"
+                        class="form-input mt-1 block w-full bg-gray-700 text-gray-200 rounded-md border-none p-2 text-lg"
+                        placeholder="Enter total classes" required>
                 </div>
-            </div>
+                <div>
+                    <label for="attendedClasses" class="block text-lg font-medium text-gray-400">Attended Classes:</label>
+                    <input type="number" id="attendedClasses"
+                        class="form-input mt-1 block w-full bg-gray-700 text-gray-200 rounded-md border-none p-2 text-lg"
+                        placeholder="Enter attended classes" required>
+                </div>
+                <div>
+                    <label for="desiredAttendance" class="block text-lg font-medium text-gray-400">Desired Attendance (%):</label>
+                    <input type="number" id="desiredAttendance"
+                        class="form-input mt-1 block w-full bg-gray-700 text-gray-200 rounded-md border-none p-2 text-lg"
+                        value="75" placeholder="Enter desired attendance %" required>
+                </div>
+                <button type="submit"
+                    class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded w-full text-lg">Calculate</button>
+            </form>
+            <div id="result" class="mt-4 text-white text-lg"></div>
         </div>
-    
-
-
-    
+    </div>
 
     <script src="script.js">
-        document.getElementById('menu-toggle').addEventListener('click', function() {
-            document.getElementById('navbar-search').classList.toggle('hidden');
-        });
-        document.getElementById('search-toggle').addEventListener('click', function() {
-            document.getElementById('mobile-search-input').classList.toggle('hidden');
-        });
-
-        function highlightText(searchText, content) {
-            if (!searchText) {
-                return content;
-            }
-            const regex = new RegExp(`(${searchText})`, 'gi');
-            return content.replace(regex, '<span class="highlight">$1</span>');
-        }
-
-        function searchHandler(inputId) {
-            const searchInput = document.getElementById(inputId);
-            const searchContent = document.querySelectorAll('.search-content');
-
-            searchInput.addEventListener('input', () => {
-                const query = searchInput.value.trim().toLowerCase();
-                searchContent.forEach((element) => {
-                    const text = element.textContent.toLowerCase();
-                    if (text.includes(query)) {
-                        element.innerHTML = highlightText(query, element.textContent);
-                        element.style.display = '';
-                    } else {
-                        element.innerHTML = element.textContent;
-                        element.style.display = 'none';
-                    }
-                });
-            });
-        }
-
-        searchHandler('search-input');
-        searchHandler('mobile-search-input');
+        
     </script>
 </body>
 </html>
